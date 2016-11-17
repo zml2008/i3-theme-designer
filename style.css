@@ -23,6 +23,10 @@ header .title {
     font-family: monospace;
 }
 
+div#knobs label {
+    margin-right: .5em;
+}
+
 /* Colour Picker Formatting */
 div#knobs  input {
     margin-right: 0;
