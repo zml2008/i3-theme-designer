@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>i3wm Theme Maker</title>
+        <link rel="stylesheet" type="text/css" href="style.css"/>
+    </head>
+    <body>
+        <header>
+            <span class="title">i3 window manager theme designer <br /></span>
+            by zml (it looks ugly because they're bad at the web make it better if you know how?)<br />
+            <a href="https://github.com/zml2008/i3-theme-designer">on github</a>
+        </header>
+        <div id="main">
+            <div id="preview">
+                <div id="unfocused-window" class="unfocused">
+                    <span class="win-title">Unfocused Window</span>
+                    <div id="window" class="focused"> <!-- on top -->
+                        <div class="win-title" id="title">
+                            Window: Title
+                            <span id="inactive" class="focused-inactive">
+                                Focused Inactive Window
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div id="bar">
+                    <span class="tag focused">1</span>
+                    <span class="tag focused-inactive">2</span>
+                    <span class="tag unfocused">3</span>
+                    <span class="tag urgent">4</span>
+                </div>
+            </div>
+            <div id="editor">
+            <div id="knobs">
+            </div>
+            <div id="config-output">
+                <div id="config-output-insert">
+                    <pre>
+                    </pre>
+                </div>
+                <pre>
+client.focused  $focused_bg $focused_bg $focused_fg $focused_inactive_bg
+client.focused_inactive $focused_inactive_bg $focused_inactive_bg $focused_inactive_fg $focused_bg
+client.unfocused $unfocused_bg $unfocused_bg $unfocused_fg $unfocused_bg
+client.urgent $urgent_bg $urgent_bg $urgent_fg $urgent_bg
+client.placeholder #000000 $focused_inactive_bg $focused_inactive_fg #000000
+bar {
+    colors {
+            background $bar_bg
+            #statusline $unfocused_fg
+
+            focused_workspace $focused_bg $focused_bg $focused_fg
+            active_workspace $focused_inactive_bg $focused_inactive_bg $focused_inactive_fg
+            inactive_workspace $unfocused_bg $unfocused_bg $unfocused_fg
+            urgent_workspace $urgent_bg $urgent_bg $urgent_fg
+    }
+}
+                </pre>
+            </div>
+            </div>
+        </div>
+        <script type="text/javascript" src="colorPicker/colors.js"></script>
+        <script type="text/javascript" src="colorPicker/colorPicker.data.js"></script>
+        <script type="text/javascript" src="colorPicker/colorPicker.js"></script>
+        <script type="text/javascript" src="colorPicker/javascript_implementation/jsColorPicker.min.js"></script>
+
+
+        <script type="text/javascript" src="designer.js"></script>
+    </body>
+</html>
+</body>
+</html>
