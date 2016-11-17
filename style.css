@@ -1,0 +1,61 @@
+/* General Page Layout */
+header {
+    font-size: 18pt;
+    padding: .2em;
+    margin-bottom: .8em;
+    border-bottom: .1ex solid #000000;
+}
+
+header .title {
+    font-size: 18pt;
+    font-weight: bold;
+}
+
+#editor {
+    float: left;
+}
+#preview {
+    float: right;
+}
+
+/* Output Panel Formatting */
+#config-output-insert {
+    font-family: monospace;
+}
+
+/* Colour Picker Formatting */
+div#knobs  input {
+    margin-right: 0;
+    margin-left: auto;
+}
+div#knobs > div {
+    width: 100%;
+}
+
+/* Preview Pane Formatting */
+
+#preview {
+    width: 20em;
+}
+.win-title{
+    font-family: monospace;
+}
+
+.tag {
+    font-family: monospace;
+    padding: .2em;
+    margin: .05em
+}
+
+#window {
+    width: 98%;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+#inactive {
+    width: 100%;
+    margin-left: .1em;
+    margin: 0;
+}
