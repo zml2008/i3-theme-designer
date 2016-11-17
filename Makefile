@@ -17,9 +17,14 @@ SHA = $(shell git rev-parse --verify HEAD)
 deploy: build
 	if [ ! -e "out" ]; then
 		git clone $(REPO) out
+		cd out
+		git checkout $(TARGET_BRANCH) || git checkout --orphan $(TARGET_BRANCH)
+	else
+		cd out
+		git checkout $(TARGET_BRANCH)
+		git pull --rebase origin $(TARGET_BRANCH)
 	fi
-	cd out
-	git checkout $(TARGET_BRANCH) || git checkout --orphan $(TARGET_BRANCH)
+
 	rm -rf **/* || exit 0
 	cp -R ../build/* .
 	rm -rf **/.git
