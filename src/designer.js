@@ -77,23 +77,23 @@ configOutputElement.oninput = ev => parseColorData(ev.srcElement.value)
 
 
 // initialize color pickers
-registerColor("Focused Window Foreground", "focused_fg", "#222222", 
+registerColor("Focused Window Foreground", "focused_fg", "#ffffff", 
         col => forEachElWithClass("focused", el => el.style.color = col));
-registerColor("Focused Window Background", "focused_bg", "#eeeeee", 
+registerColor("Focused Window Background", "focused_bg", "#285577", 
         col => forEachElWithClass("focused", el => el.style.backgroundColor = col));
-registerColor("Focused Inactive Window Foreground", "focused_inactive_fg", "#222222", 
+registerColor("Focused Inactive Window Foreground", "focused_inactive_fg", "#ffffff", 
         col => forEachElWithClass("focused-inactive", el => el.style.color = col));
-registerColor("Focused Inactive Window Background", "focused_inactive_bg", "#dddddd", 
+registerColor("Focused Inactive Window Background", "focused_inactive_bg", "#5f676a", 
         col => forEachElWithClass("focused-inactive", el => el.style.backgroundColor = col));
-registerColor("Unfocused Window Foreground", "unfocused_fg", "#999999", 
+registerColor("Unfocused Window Foreground", "unfocused_fg", "#888888", 
         col => forEachElWithClass("unfocused", el => el.style.color = col));
-registerColor("Unfocused Window Background", "unfocused_bg", "#333333", 
+registerColor("Unfocused Window Background", "unfocused_bg", "#222222", 
         col => forEachElWithClass("unfocused", el => el.style.backgroundColor = col));
 registerColor("Urgent Window Foreground", "urgent_fg", "#ffffff", 
         col => forEachElWithClass("urgent", el => el.style.color = col));
-registerColor("Urgent Window Background", "urgent_bg", "#901010", 
+registerColor("Urgent Window Background", "urgent_bg", "#900000", 
         col => forEachElWithClass("urgent", el => el.style.backgroundColor = col));
-registerColor("Bar Background", "bar_bg", "#111111", 
+registerColor("Bar Background", "bar_bg", "#000000", 
         col => document.getElementById("bar").style.backgroundColor = col);
 
 

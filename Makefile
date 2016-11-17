@@ -5,8 +5,7 @@ build: src/*
 	cp -R src/ build/
 
 run: build
-	cd build
-	python -m http.server
+	cd build && python -m http.server
 
 TARGET_BRANCH=gh-pages
 REPO = $(shell git config remote.origin.url)
