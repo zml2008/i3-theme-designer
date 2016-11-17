@@ -2,26 +2,27 @@
 
 // element declarations
 var colorData = {};
-var configOutputElement = document.getElementById("config-output-insert").firstElementChild;
+var configOutputElement = document.getElementById("config-output-insert");
 var knobsElement = document.getElementById("knobs");
+var varSetRe = /set \$([^ ]+) (#[0-9A-Fa-f]{6})/;
+var suppressUpdates = false;
 
 
 // color management functions
 function updateConfig() {
-    configOutputElement.innerHTML = "";
+    if (suppressUpdates) {
+        return;
+    }
+    configOutputElement.value = "";
     for (var name of Object.keys(colorData)) {
         var data = colorData[name];
-        configOutputElement.innerHTML += "set $" + name + " " + data.color + "</br>";
+        configOutputElement.value += "set $" + name + " " + data.color + "\n";
         data.update(data.color)
     }
 }
 
 // String String (hex color) (hex color) -> void
 function registerColor(name, configKey, defaultValue, updateFunc) {
-    colorData[configKey] = {color: defaultValue,
-        name: name,
-        update: updateFunc
-    };
     var inputEl = document.createElement("input");
     inputEl.id=configKey;
     inputEl.classList.add("color");
@@ -33,7 +34,12 @@ function registerColor(name, configKey, defaultValue, updateFunc) {
     containerEl.appendChild(labelEl);
     containerEl.appendChild(inputEl);
     knobsElement.appendChild(containerEl);
-    
+
+    colorData[configKey] = {color: defaultValue,
+        name: name,
+        update: updateFunc,
+        element: inputEl
+    };
 }
 
 function forEachElWithClass(className, func) {
@@ -41,6 +47,34 @@ function forEachElWithClass(className, func) {
         func(el);
     }
 }
+
+// Update color data from config paste
+function parseColorData(configText) {
+    suppressUpdates = true;
+    try {
+        configText.split("\n").forEach(line => {
+            var reMatch = varSetRe.exec(line);
+            if (reMatch !== null) {
+                var param = reMatch[1];
+                var color = reMatch[2];
+                if (colorData[param]) {
+                    var data = colorData[param];
+                    data.color = color;
+                    data.update(data.color);
+                    data.element.value = data.color;
+                }
+            } else if (line != "") { // the last line is empty so never matches
+                console.log("Line " + line + " was not a valid variable line!");
+            }
+        });
+    } finally {
+        suppressUpdates = false;
+    }
+}
+configOutputElement.oninput = ev => parseColorData(ev.srcElement.value)
+
+
+
 
 // initialize color pickers
 registerColor("Focused Window Foreground", "focused_fg", "#222222", 

@@ -1,9 +1,9 @@
 /* General Page Layout */
 header {
     font-size: 18pt;
-        padding: .2em;
-        margin-bottom: .8em;
-        border-bottom: .1ex solid #000000;
+    padding: .2em;
+    margin-bottom: .8em;
+    border-bottom: .1ex solid #000000;
 }
 
 header .title {
@@ -18,39 +18,44 @@ header .title {
     float: right;
 }
 
-    /* Colour Picker Formatting */
-    div#knobs  input {
-        margin-right: 0;
-            margin-left: auto;
-    }
-    div#knobs > div {
-        width: 100%;
-    }
+/* Output Panel Formatting */
+#config-output-insert {
+    font-family: monospace;
+}
 
-    /* Preview Pane Formatting */
+/* Colour Picker Formatting */
+div#knobs  input {
+    margin-right: 0;
+    margin-left: auto;
+}
+div#knobs > div {
+    width: 100%;
+}
 
-    #preview {
-        width: 20em;
-    }
-    .win-title{
-        font-family: monospace;
-    }
+/* Preview Pane Formatting */
 
-    .tag {
-        font-family: monospace;
-            padding: .2em;
-                margin: .05em
-    }
+#preview {
+    width: 20em;
+}
+.win-title{
+    font-family: monospace;
+}
 
-    #window {
-        width: 98%;
-        margin-left: auto;
-        margin-right: auto;
+.tag {
+    font-family: monospace;
+    padding: .2em;
+    margin: .05em
+}
 
-    }
+#window {
+    width: 98%;
+    margin-left: auto;
+    margin-right: auto;
 
-    #inactive {
-        width: 100%;
-        margin-left: .1em;
-        margin: 0;
-    }
+}
+
+#inactive {
+    width: 100%;
+    margin-left: .1em;
+    margin: 0;
+}
