@@ -28,6 +28,7 @@
                     <span class="tag focused-inactive">2</span>
                     <span class="tag unfocused">3</span>
                     <span class="tag urgent">4</span>
+                    <span class="statusline">2016-03-14 15:00:00</span>
                 </div>
             </div>
             <div id="editor">
@@ -52,7 +53,7 @@ bar {
     # [...existing bar configuration...]
     colors {
             background $bar_bg
-            #statusline $unfocused_fg
+            statusline $bar_fg
 
             focused_workspace $focused_bg $focused_bg $focused_fg
             active_workspace $focused_inactive_bg $focused_inactive_bg $focused_inactive_fg

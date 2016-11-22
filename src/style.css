@@ -41,12 +41,16 @@ div#knobs > div {
 #preview {
     width: 20em;
 }
+
 .win-title{
     font-family: monospace;
 }
 
-.tag {
+#bar {
     font-family: monospace;
+}
+
+.tag {
     padding: .2em;
     margin: .05em
 }
@@ -62,4 +66,10 @@ div#knobs > div {
     width: 100%;
     margin-left: .1em;
     margin: 0;
+}
+
+#bar .statusline {
+    text-align: right;
+    float: right;
+
 }
