@@ -95,6 +95,8 @@ registerColor("Urgent Window Background", "urgent_bg", "#900000",
         col => forEachElWithClass("urgent", el => el.style.backgroundColor = col));
 registerColor("Bar Background", "bar_bg", "#000000", 
         col => document.getElementById("bar").style.backgroundColor = col);
+registerColor("Bar Foreground", "bar_fg", "#FFFFFF", 
+        col => document.getElementById("bar").style.color = col);
 
 
 // color picker init
